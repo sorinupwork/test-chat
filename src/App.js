@@ -4,6 +4,7 @@ import { Widget, addResponseMessage, addLinkSnippet } from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 
 import logo from "./logo.svg";
+import coffee from "./coffee.png";
 import "./App.css";
 
 let messages = [];
@@ -29,7 +30,12 @@ function App() {
     console.log(messages);
   };
 
-  const subtitle = <p className="subtitleText">How can we help?</p>;
+  const subtitle = (
+    <p className="subtitleText">
+      How can we help?
+      <p className="subText">We tipically reply in under 3 minutes.</p>
+    </p>
+  );
 
   return (
     <div>
@@ -40,15 +46,13 @@ function App() {
       </div>
 
       <Widget
-        titleAvatar={logo}
+        titleAvatar={coffee}
+        title="Hi there 👋"
+        subtitle={subtitle}
         emojis={true}
+        senderPlaceHolder="Send us a message"
         handleNewUserMessage={handleNewUserMessage}
         profileAvatar={logo}
-        title={`Hi there 👋`}
-        subtitle={subtitle}
-        senderPlaceHolder={`Send us a message
-
-We tipically reply in under 3 minutes.`}
       />
     </div>
   );

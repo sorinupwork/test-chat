@@ -9,5 +9,26 @@
 .subtitleText {
   font-size: 2rem;
   color: black;
-  margin: 0;
+}
+
+.subText {
+  font-size: 12px;
+}
+
+.rcw-picker-icon {
+  margin-right: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.rcw-send-icon {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.rcw-open-launcher {
+  margin-left: 0.8rem;
+}
+
+.rcw-close-launcher {
+  margin-left: 1.2rem;
 }
