@@ -49,7 +49,7 @@ function App() {
   );
 
   return (
-    <div>
+    <div className="App">
       <div>
         <h1 className="text-3xl text-center">Custom messages</h1>
         <p className="text-center">hello</p>

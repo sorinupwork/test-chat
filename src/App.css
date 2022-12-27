@@ -1,3 +1,7 @@
+.App {
+  height: 100%;
+}
+
 .rcw-conversation-container > .rcw-header {
   background-color: #fefaf6;
 }
@@ -38,5 +42,15 @@
 }
 
 .quick-buttons-container {
-  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.rcw-messages-container {
+  padding: 0 !important;
+}
+
+@media only screen and (max-height: 800px) {
+  .rcw-messages-container {
+    height: 11rem;
+  }
 }
