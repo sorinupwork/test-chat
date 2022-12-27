@@ -1,8 +1,5 @@
 .rcw-conversation-container > .rcw-header {
   background-color: #fefaf6;
-}
-
-.rcw-conversation-container .rcw-header {
   color: #6b6768;
 }
 
@@ -13,4 +10,18 @@
 
 .subText {
   font-size: 12px;
+}
+
+.button {
+  margin: 15px;
+  border: none;
+  cursor: pointer;
+  background-color: lightgrey;
+  border-radius: 25px;
+  padding: 10px;
+  width: 100%;
+}
+
+.button:hover {
+  text-decoration: underline;
 }

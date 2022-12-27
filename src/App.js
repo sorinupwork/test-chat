@@ -3,7 +3,7 @@ import {
   Widget,
   addResponseMessage,
   addLinkSnippet,
-  setQuickButtons,
+  renderCustomComponent,
 } from "react-chat-widget";
 
 import "react-chat-widget/lib/styles.css";
@@ -11,13 +11,16 @@ import "react-chat-widget/lib/styles.css";
 import logo from "./logo.svg";
 import coffee from "./coffee.png";
 import "./App.css";
+import Navbar from "./components/Navbar";
 
-let messages = [];
+export let messages = [];
+let response = ["**HELLO**", "Welcome to this **awesome** chat!"];
+export let robotMessages = [];
 
 function App() {
   const handleNewUserMessage = (newMessage) => {
     if (newMessage.toLowerCase() === "hello") {
-      addResponseMessage(" **HELLO** ");
+      addResponseMessage(response[0]);
     } else if (newMessage.toLowerCase() === "test") {
       addLinkSnippet({
         title: "Created by",
@@ -25,41 +28,28 @@ function App() {
         target: "_blank",
       });
     } else {
-      addResponseMessage("Welcome to this **awesome** chat!");
+      addResponseMessage(response[1]);
     }
 
     console.log(`New message incoming! ${newMessage}`);
 
     // Now send the message throught the backend API
     messages.push(newMessage);
+    robotMessages.push(response);
     console.log(messages);
+    console.log(robotMessages);
   };
-
-  setQuickButtons([
-    { label: "Messages", value: "messages" },
-    { label: "Home", value: "home" },
-    { label: "Help", value: "help" },
-  ]);
 
   const subtitle = (
     <div className="subtitleText">
       How can we help?
       <p className="subText">We tipically reply in under 3 minutes.</p>
+      <Navbar />
     </div>
   );
 
   return (
     <div className="App">
-      <div>
-        <h1 className="text-3xl text-center">Custom messages</h1>
-        <p className="text-center">hello</p>
-        <p className="text-center">test</p>
-        <h2 className="text-1xl text-center text-gray-500">
-          I saved user's messages into an array, you can view it into google
-          console.log{" "}
-        </h2>
-      </div>
-
       <Widget
         titleAvatar={coffee}
         title="Hi there 👋"
