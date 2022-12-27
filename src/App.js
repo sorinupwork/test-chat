@@ -62,6 +62,7 @@ function App() {
 
       <Widget
         titleAvatar={coffee}
+        autofocus={false}
         title="Hi there 👋"
         subtitle={subtitle}
         emojis={true}
