@@ -1,5 +1,10 @@
 import React from "react";
-import { Widget, addResponseMessage, addLinkSnippet } from "react-chat-widget";
+import {
+  Widget,
+  addResponseMessage,
+  addLinkSnippet,
+  setQuickButtons,
+} from "react-chat-widget";
 
 import "react-chat-widget/lib/styles.css";
 
@@ -30,19 +35,29 @@ function App() {
     console.log(messages);
   };
 
+  setQuickButtons([
+    { label: "Messages", value: "messages" },
+    { label: "Home", value: "home" },
+    { label: "Help", value: "help" },
+  ]);
+
   const subtitle = (
-    <p className="subtitleText">
+    <div className="subtitleText">
       How can we help?
       <p className="subText">We tipically reply in under 3 minutes.</p>
-    </p>
+    </div>
   );
 
   return (
     <div>
       <div>
-        <h1>Custom messages</h1>
-        <p>hello</p>
-        <p>test</p>
+        <h1 className="text-3xl text-center">Custom messages</h1>
+        <p className="text-center">hello</p>
+        <p className="text-center">test</p>
+        <h2 className="text-1xl text-center text-gray-500">
+          I saved user's messages into an array, you can view it into google
+          console.log{" "}
+        </h2>
       </div>
 
       <Widget
